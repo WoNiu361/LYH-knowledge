@@ -1,0 +1,58 @@
+//
+//  LYH-PrefixHeader.pch
+//  LYH-knoeledge
+//
+//  Created by LYH on 23/12/16.
+//  Copyright © 2016年 LYH-1140663172. All rights reserved.
+//
+
+#ifndef LYH_PrefixHeader_pch
+#define LYH_PrefixHeader_pch
+
+#import "UIView+Extension.h"
+#import "UILabel+CommonUseLLabel.h"
+#import "RepeatUseInProject.h"
+#import "UIButton+CommonUseButton.h"
+//这个第三方，你只要导入pch文件，那么整个项目就会有一个侧滑返回的功能
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
+#import "MainTableViewController.h"
+
+
+#define kUIScreenWidth          [UIScreen mainScreen].bounds.size.width
+#define kUIScreenHeight         [UIScreen mainScreen].bounds.size.height
+#define kSpaceW(W)              W * (kUIScreenWidth / 375)
+#define kSpaceH(H)              H * (kUIScreenHeight / 667)
+#define kNavigationBarHeight    64
+
+
+// 日志输出宏定义
+#ifdef DEBUG
+// 调试状态
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else
+// 发布状态
+#define MyLog(...)
+#endif
+
+
+// 获得RGB颜色
+#define RGBAColor(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+#define RGBColor(r, g, b) RGBAColor(r,g,b,1.0)
+
+// 随机色
+#define RandomColor RGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#define GlobalBackgroundColor    RGBColor(239,244,245)
+#define kGlobalCellSelectedBg    RGBAColor(237, 233, 218, 0.2)
+#define GlobalTextLabelColor     RGBColor(209,44,5)
+#define RandomColor              RGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+//16进制转换为rgb颜色
+#define kUIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define kUserDefaults           [NSUserDefaults standardUserDefaults]
+
+#endif /* LYH_PrefixHeader_pch */
