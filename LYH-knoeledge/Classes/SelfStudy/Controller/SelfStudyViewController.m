@@ -27,8 +27,8 @@
 //    self.title = @"自学";这样子设置导航条标题，会影响tabbar上的标题
 //    self.navigationItem.title = @"自学";这样子设置导航条标题，不会影响tabbar上的标题，如果想导航条标题和tabbar上的标题一致，那么tabbar设置好标题，就不要在设置标题就好了
     self.view.backgroundColor = GlobalBackgroundColor;
-    self.allArray = [NSMutableArray arrayWithObjects:@"TextField",@"1",@"2",@"3",@"4",@"5",@"6",@"7", nil];
-    self.titleArray = @[@"TextField",@"字符串属性",@"UI特别属性",@"collection知识",@"tableView",@"弹框提醒",@"贝塞尔曲线",@"7"];
+    self.allArray = [NSMutableArray arrayWithObjects:@"TextField",@"1",@"2",@"3",@"4",@"5",@"6", nil];
+    self.titleArray = @[@"TextField",@"字符串属性",@"UI特别属性",@"collection知识",@"tableView",@"弹框提醒",@"贝塞尔曲线"];
 
 }
 

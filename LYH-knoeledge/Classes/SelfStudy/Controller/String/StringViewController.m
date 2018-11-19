@@ -24,9 +24,10 @@
     self.view.backgroundColor = GlobalBackgroundColor;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [self richPropertyAboutString];
+//    [self richPropertyAboutString];
+    [self oneStringContainAnotherString];
 }
-#pragma mark------富文本属性
+#pragma mark - 富文本属性
 - (void)richPropertyAboutString{
     self.testLabel = [UILabel createLabelWithText:@"346 名" withTexrtFont:36 withTextColor:[UIColor redColor] withFrame:CGRectMake(10, 10, 200, 40) withTextAlignment:NSTextAlignmentLeft fontWeight:UIFontWeightMedium];
     [self.view addSubview:self.testLabel];
@@ -62,6 +63,23 @@
     self.linesLabel.attributedText = attributedString1;
     [self.linesLabel sizeToFit];
     
+}
+#pragma mark - 判断一个字符串是否包含另一个字符串
+- (void)oneStringContainAnotherString {
+    
+    NSString *a = @"zhengzhou";
+    NSString *b = @"zhou";
+    NSString *c = @"hang";
+    
+    //struct，结构体，range 是一个结构体。
+    //location 表明 b 在 a 中的位置。
+    
+    NSRange range = [a rangeOfString:b];
+    if (range.location == NSNotFound) {
+        MyLog(@"not contain");
+    } else {
+        MyLog(@"contain ");
+    }
 }
 
 @end
