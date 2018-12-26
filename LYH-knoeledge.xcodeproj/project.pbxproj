@@ -67,6 +67,7 @@
 		CAD9DA89216F3B480050BBCC /* KeyFrameAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD9DA88216F3B480050BBCC /* KeyFrameAnimationViewController.m */; };
 		CAD9DA8C216F5EBC0050BBCC /* AnimationGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD9DA8B216F5EBC0050BBCC /* AnimationGroupViewController.m */; };
 		CAD9DA8F216F6D680050BBCC /* TranslationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD9DA8E216F6D680050BBCC /* TranslationViewController.m */; };
+		CAE6DAEA21D382C000384A33 /* NSDate+CompareDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE6DAE921D382C000384A33 /* NSDate+CompareDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,8 @@
 		CAD9DA8B216F5EBC0050BBCC /* AnimationGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationGroupViewController.m; sourceTree = "<group>"; };
 		CAD9DA8D216F6D680050BBCC /* TranslationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslationViewController.h; sourceTree = "<group>"; };
 		CAD9DA8E216F6D680050BBCC /* TranslationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslationViewController.m; sourceTree = "<group>"; };
+		CAE6DAE821D382C000384A33 /* NSDate+CompareDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+CompareDate.h"; sourceTree = "<group>"; };
+		CAE6DAE921D382C000384A33 /* NSDate+CompareDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CompareDate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +240,7 @@
 		146B1B2A216F513100EC5522 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				529D82271E112CE4009BD4F3 /* Controller */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,7 +452,6 @@
 			children = (
 				146B1B2A216F513100EC5522 /* Model */,
 				529D82281E112CED009BD4F3 /* View */,
-				529D82271E112CE4009BD4F3 /* Controller */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -484,6 +487,8 @@
 				529D82311E112D8B009BD4F3 /* UIButton+CommonUseButton.m */,
 				144FDE531FE2C5B8002319C7 /* CutCornerImage.h */,
 				144FDE541FE2C5B8002319C7 /* CutCornerImage.m */,
+				CAE6DAE821D382C000384A33 /* NSDate+CompareDate.h */,
+				CAE6DAE921D382C000384A33 /* NSDate+CompareDate.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -840,6 +845,7 @@
 				5284E0FA1E0D243200A9594A /* PictureZoomView.m in Sources */,
 				5213D1A61E1A48B900CF5754 /* SelfStudyViewController.m in Sources */,
 				5213D1AF1E1A498700CF5754 /* BaseTextField.m in Sources */,
+				CAE6DAEA21D382C000384A33 /* NSDate+CompareDate.m in Sources */,
 				5284E0F71E0D215500A9594A /* NotCommonUseViewController.m in Sources */,
 				520078981E19F7D100060999 /* MainTableViewController.m in Sources */,
 				CA9B0C4D2170323D00C08146 /* CollectionViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "StringViewController.h"
+#import "NSDate+CompareDate.h"
 
 @interface StringViewController ()
 /** 属性label */
@@ -25,7 +26,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
 //    [self richPropertyAboutString];
-    [self oneStringContainAnotherString];
+//    [self oneStringContainAnotherString];
+    [self judgeAndShowTime];
 }
 #pragma mark - 富文本属性
 - (void)richPropertyAboutString{
@@ -82,4 +84,43 @@
     }
 }
 
+
+- (void)judgeAndShowTime {
+    
+    self.testLabel = [UILabel createLabelWithText:@"346 名" withTexrtFont:36 withTextColor:[UIColor redColor] withFrame:CGRectMake(10, 10, 200, 40) withTextAlignment:NSTextAlignmentLeft fontWeight:UIFontWeightMedium];
+    [self.view addSubview:self.testLabel];
+    
+    // 2014-12-31 23:59:59 -> 2014-12-31
+    // 2015-01-01 00:00:01 -> 2015-01-01
+    
+    NSString *timeStr = @"2018-12-26 18:45:30";
+    // 日期格式化类
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    // 设置日期格式(y:年,M:月,d:日,H:时,m:分,s:秒)
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    // 帖子的创建时间
+    NSDate *create = [fmt dateFromString:timeStr];
+    if (create.isThisYear) {//今年
+        if (create.isToday) {//今天
+            NSDateComponents *cmps = [[NSDate date] compareWithDate:create];
+            MyLog(@"cmps   -- %@",cmps);
+            if (cmps.hour >= 1) {//时间差值 >= 1小时
+                self.testLabel.text = [NSString stringWithFormat:@"%zd小时前",cmps.hour];
+            } else if (cmps.minute >= 1) {// 1小时 > 时间差值 >= 1分钟
+                self.testLabel.text = [NSString stringWithFormat:@"%zd分钟前",cmps.minute];
+            } else {//1分钟 > 时间差
+                self.testLabel.text = @"刚刚";
+            }
+        } else if (create.isYesterday) {// 昨天
+            fmt.dateFormat = @"昨天 HH:mm:ss";
+            self.testLabel.text = [fmt stringFromDate:create];
+        } else {
+            fmt.dateFormat = @"MM-dd HH:mm:ss";
+            self.testLabel.text = [fmt stringFromDate:create];
+        }
+    } else {//非今年
+        self.testLabel.text = timeStr;
+    }
+    MyLog(@"time ---%@",self.testLabel.text);
+}
 @end
