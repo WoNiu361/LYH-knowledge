@@ -71,7 +71,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SelectOrUnselectTableViewCell *cell = [SelectOrUnselectTableViewCell setupCellWithTableView:tableView];
     cell.model = self.modelArray[indexPath.row];
-#pragma mark----默认选中第一行
+#pragma mark - 默认选中第一行
     if (indexPath.row == 0) {
         if (self.flag) {
             [self.btn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -91,7 +91,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     SelectOrUselectModel *model = self.modelArray[indexPath.row];
-#pragma mark----这个判断用来控制底部button的字体颜色和是否可以点击
+#pragma mark - 这个判断用来控制底部button的字体颜色和是否可以点击
     if (model.isSelect) {
         self.index --;
         if (self.index != 0) {
@@ -120,7 +120,7 @@
 
     
 }
-#pragma mark-----底部的确定按钮
+#pragma mark - 底部的确定按钮
 - (void)createBottomView{
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, kUIScreenHeight - 50 - kNavigationBarHeight, kUIScreenWidth, 50)];
     bgView.backgroundColor = [UIColor whiteColor];
